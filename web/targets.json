@@ -1,0 +1,171 @@
+{
+ "moon_mons_mouton": {
+  "name": "Mons Mouton Plateau (Lunar South Pole, Artemis III candidate region)",
+  "short_name": "Mons Mouton",
+  "body": "Moon",
+  "description": "Flat-topped massif near the lunar south pole, one of NASA's nine candidate landing regions for Artemis III (Oct 2024). Terrain profile computed from LRO LOLA topography over the summit plateau.",
+  "center": {
+   "lat": -84.5,
+   "lon": 28.0,
+   "source_url": "https://astrogeology.usgs.gov/search/map/moon_lro_lola_dem_118m",
+   "note": "Centre of the flat summit plateau (≈4.4–5.5 km elevation) as read from LRO LOLA by Analog MX; Mons Mouton summit is listed at 84°36′S 31°00′E."
+  },
+  "criteria": {
+   "slope_median_deg": {
+    "value": 5.91,
+    "type": "match",
+    "source_url": "https://astrogeology.usgs.gov/search/map/moon_lro_lola_dem_118m",
+    "source_note": "Median slope computed by Analog MX from NASA LRO LOLA 118 m DEM over a 40×30 km box at ~460 m pixels (same method as Earth cells; pipeline/target_terrain.py)."
+   },
+   "slope_p90_deg": {
+    "value": 13.1,
+    "type": "match",
+    "source_url": "https://astrogeology.usgs.gov/search/map/moon_lro_lola_dem_118m",
+    "source_note": "90th-percentile slope computed by Analog MX from NASA LRO LOLA 118 m DEM over a 40×30 km box at ~460 m pixels (same method as Earth cells; pipeline/target_terrain.py)."
+   },
+   "relief_m": {
+    "value": 1530.8,
+    "type": "match",
+    "source_url": "https://astrogeology.usgs.gov/search/map/moon_lro_lola_dem_118m",
+    "source_note": "P95−P5 elevation computed by Analog MX from NASA LRO LOLA 118 m DEM over a 40×30 km box at ~460 m pixels (same method as Earth cells; pipeline/target_terrain.py)."
+   },
+   "aridity": {
+    "type": "extreme",
+    "direction": "dry"
+   },
+   "thermal_range": {
+    "type": "extreme",
+    "direction": "high"
+   },
+   "cold": {
+    "type": "extreme",
+    "direction": "low_temp"
+   },
+   "solar": {
+    "type": "extreme",
+    "direction": "high"
+   }
+  },
+  "real_values_for_display": [
+   {
+    "label": "Artemis III candidate region",
+    "value": "One of nine candidate regions announced by NASA, Oct 2024",
+    "source_url": "https://www.nasa.gov/news-release/nasa-identifies-candidate-regions-for-landing-next-americans-on-moon/"
+   },
+   {
+    "label": "Plateau elevation",
+    "value": "≈5,000–6,000 m across a ~60 km span",
+    "source_url": "https://www.astronomy.com/space-exploration/here-are-the-nine-sites-where-artemis-3-might-land-on-the-moon/"
+   },
+   {
+    "label": "Surface gravity",
+    "value": "1.62 m/s² (Earth: 9.8)",
+    "source_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+   },
+   {
+    "label": "Surface pressure",
+    "value": "≈3×10⁻¹⁵ bar (effectively vacuum)",
+    "source_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+   },
+   {
+    "label": "Equatorial surface temperature",
+    "value": "95 K to 390 K (−178 °C to +117 °C)",
+    "source_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+   },
+   {
+    "label": "South-polar cold traps (Diviner)",
+    "value": "Average annual temperature ≈37 K at the LCROSS site in Cabeus",
+    "source_url": "https://pubs.usgs.gov/publication/70036393"
+   }
+  ],
+  "earth_cannot_simulate": [
+   "1/6 g gravity (1.62 m/s²)",
+   "Hard vacuum — no air for convective cooling, no wind",
+   "Radiation environment (no magnetic field or atmosphere)",
+   "Low-angle polar sunlight, long shadows and permanently shadowed regions",
+   "Lunar regolith: sharp, electrostatically charged dust"
+  ]
+ },
+ "mars_gale": {
+  "name": "Gale Crater (Curiosity rover site, gypsum-bearing)",
+  "short_name": "Gale Crater",
+  "body": "Mars",
+  "description": "155 km crater where Curiosity has driven since 2012; its layered central mound holds sulfates such as gypsum. Terrain profile computed from MGS MOLA topography around Bradbury Landing.",
+  "center": {
+   "lat": -4.5895,
+   "lon": 137.4417,
+   "source_url": "https://en.wikipedia.org/wiki/Bradbury_Landing",
+   "note": "Bradbury Landing, Curiosity touchdown point."
+  },
+  "criteria": {
+   "slope_median_deg": {
+    "value": 2.95,
+    "type": "match",
+    "source_url": "https://astrogeology.usgs.gov/search/map/mars_mgs_mola_dem_463m",
+    "source_note": "Median slope computed by Analog MX from NASA MGS MOLA 463 m DEM over a 40×30 km box at ~460 m pixels (same method as Earth cells; pipeline/target_terrain.py)."
+   },
+   "slope_p90_deg": {
+    "value": 13.97,
+    "type": "match",
+    "source_url": "https://astrogeology.usgs.gov/search/map/mars_mgs_mola_dem_463m",
+    "source_note": "90th-percentile slope computed by Analog MX from NASA MGS MOLA 463 m DEM over a 40×30 km box at ~460 m pixels (same method as Earth cells; pipeline/target_terrain.py)."
+   },
+   "relief_m": {
+    "value": 2809.9,
+    "type": "match",
+    "source_url": "https://astrogeology.usgs.gov/search/map/mars_mgs_mola_dem_463m",
+    "source_note": "P95−P5 elevation computed by Analog MX from NASA MGS MOLA 463 m DEM over a 40×30 km box at ~460 m pixels (same method as Earth cells; pipeline/target_terrain.py)."
+   },
+   "aridity": {
+    "type": "extreme",
+    "direction": "dry"
+   },
+   "thermal_range": {
+    "type": "extreme",
+    "direction": "high"
+   },
+   "cold": {
+    "type": "extreme",
+    "direction": "low_temp"
+   },
+   "solar": {
+    "type": "extreme",
+    "direction": "high"
+   }
+  },
+  "real_values_for_display": [
+   {
+    "label": "Gypsum link to Earth",
+    "value": "Gale chosen partly because its central mound is thought to hold gypsum; Cuatro Ciénegas is a gypsum-rich analog",
+    "source_url": "https://science.nasa.gov/earth/earth-observatory/gypsum-on-earth-and-mars-80502/"
+   },
+   {
+    "label": "Air temperature at Gale (REMS)",
+    "value": "Daily highs ≈0 °C, lows ≈−70 °C (first months of the mission)",
+    "source_url": "https://science.nasa.gov/photojournal/steady-temperatures-at-mars-gale-crater"
+   },
+   {
+    "label": "Surface gravity",
+    "value": "3.73 m/s² (≈3/8 of Earth)",
+    "source_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html"
+   },
+   {
+    "label": "Surface pressure",
+    "value": "6.36 mb (≈0.6% of Earth), 95.1% CO₂",
+    "source_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html"
+   },
+   {
+    "label": "Global mean temperature",
+    "value": "≈214 K (−59 °C)",
+    "source_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html"
+   }
+  ],
+  "earth_cannot_simulate": [
+   "~3/8 g gravity (3.73 m/s²)",
+   "Thin CO₂ atmosphere (≈6 mbar)",
+   "Radiation environment (no global magnetic field)",
+   "Global dust storms",
+   "Perchlorate-rich, oxidizing soil chemistry"
+  ]
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "moon_mons_mouton": {
+  "slope_median_deg": 5.91,
+  "slope_p90_deg": 13.1,
+  "relief_m": 1530.8,
+  "elev_mean_m": 4839.9,
+  "pixels": 5376,
+  "pixel_size_m": [
+   473.8,
+   465.6
+  ],
+  "box_km": [
+   40.0,
+   30.0
+  ],
+  "center": [
+   -84.5,
+   28.0
+  ],
+  "source_file": "https://planetarymaps.usgs.gov/mosaic/Lunar_LRO_LOLA_Global_LDEM_118m_Mar2014.tif",
+  "dataset_page": "https://astrogeology.usgs.gov/search/map/moon_lro_lola_dem_118m"
+ },
+ "mars_gale": {
+  "slope_median_deg": 2.95,
+  "slope_p90_deg": 13.97,
+  "relief_m": 2809.9,
+  "elev_mean_m": -3879.9,
+  "pixels": 5590,
+  "pixel_size_m": [
+   463.1,
+   461.6
+  ],
+  "box_km": [
+   40.0,
+   30.0
+  ],
+  "center": [
+   -4.5895,
+   137.4417
+  ],
+  "source_file": "https://planetarymaps.usgs.gov/mosaic/Mars_MGS_MOLA_DEM_mosaic_global_463m.tif",
+  "dataset_page": "https://astrogeology.usgs.gov/search/map/mars_mgs_mola_dem_463m"
+ }
+}

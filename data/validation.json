@@ -1,0 +1,94 @@
+[
+ {
+  "site": "El Pinacate, Sonora",
+  "expected": "moon",
+  "target": "moon_mons_mouton",
+  "cell": [
+   31.75,
+   -113.25
+  ],
+  "score": 32.48417127366113,
+  "confidence": 1,
+  "rank": 345,
+  "n": 431,
+  "top_pct": 80.04640371229698,
+  "parts": {
+   "slope_median_deg": 0.04483202129365309,
+   "slope_p90_deg": 0.2540957153333247,
+   "relief_m": 0.00873769300388597,
+   "aridity": 0.8953488372093024,
+   "thermal_range": 0.16395348837209303,
+   "cold": 0.24186046511627912,
+   "solar": 0.8418604651162791
+  }
+ },
+ {
+  "site": "El Pinacate, Sonora",
+  "expected": "moon",
+  "target": "mars_gale",
+  "cell": [
+   31.75,
+   -113.25
+  ],
+  "score": 40.016790574903034,
+  "confidence": 1,
+  "rank": 304,
+  "n": 431,
+  "top_pct": 70.53364269141531,
+  "parts": {
+   "slope_median_deg": 0.5428095266775583,
+   "slope_p90_deg": 0.19798151111263912,
+   "relief_m": 1.6620760198248087e-09,
+   "aridity": 0.8953488372093024,
+   "thermal_range": 0.16395348837209303,
+   "cold": 0.24186046511627912,
+   "solar": 0.8418604651162791
+  }
+ },
+ {
+  "site": "Cuatro Ci\u00c3\u00a9negas, Coahuila",
+  "expected": "mars",
+  "target": "moon_mons_mouton",
+  "cell": [
+   26.75,
+   -102.25
+  ],
+  "score": 61.79110948141786,
+  "confidence": 1,
+  "rank": 37,
+  "n": 431,
+  "top_pct": 8.584686774941995,
+  "parts": {
+   "slope_median_deg": 0.5512528318349854,
+   "slope_p90_deg": 0.9980117116777556,
+   "relief_m": 0.38308471678506495,
+   "aridity": 0.7255813953488373,
+   "thermal_range": 0.7174418604651163,
+   "cold": 0.40348837209302324,
+   "solar": 0.31046511627906975
+  }
+ },
+ {
+  "site": "Cuatro Ci\u00c3\u00a9negas, Coahuila",
+  "expected": "mars",
+  "target": "mars_gale",
+  "cell": [
+   26.75,
+   -102.25
+  ],
+  "score": 62.169531480106926,
+  "confidence": 1,
+  "rank": 22,
+  "n": 431,
+  "top_pct": 5.104408352668213,
+  "parts": {
+   "slope_median_deg": 0.9573935276839743,
+   "slope_p90_deg": 0.9966961674290672,
+   "relief_m": 1.8830109385260535e-05,
+   "aridity": 0.7255813953488373,
+   "thermal_range": 0.7174418604651163,
+   "cold": 0.40348837209302324,
+   "solar": 0.31046511627906975
+  }
+ }
+]
