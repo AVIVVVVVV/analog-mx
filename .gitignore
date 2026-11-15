@@ -1,0 +1,4 @@
+data/raw/
+__pycache__/
+*.log
+web/cells_fake.json
