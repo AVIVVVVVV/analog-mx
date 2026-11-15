@@ -12,7 +12,7 @@
     aridity: { label: "Aridity (low precipitation)", field: "PRECTOTCORR", kind: "extreme", dir: -1, unit: "mm/day" },
     thermal_range: { label: "Daily temperature swing", field: "T2M_RANGE", kind: "extreme", dir: +1, unit: "°C" },
     cold: { label: "Cold (low mean temperature)", field: "T2M", kind: "extreme", dir: -1, unit: "°C" },
-    solar: { label: "Solar irradiance", field: "ALLSKY_SFC_SW_DWN", kind: "extreme", dir: +1, unit: "kWh/m²/day" },
+    solar: { label: "Solar irradiance", field: "ALLSKY_SFC_SW_DWN", kind: "extreme", dir: +1, unit: "W/m²" },
   };
 
   const DEFAULT_WEIGHTS = {

@@ -35,6 +35,7 @@
     { maxNativeZoom: 8, maxZoom: 11, attribution: 'Basemap: <a href="https://earthdata.nasa.gov/gibs">NASA GIBS</a> Blue Marble · Terrain: Copernicus DEM GLO-90 (ESA) · Climate: NASA POWER' }
   ).addTo(map);
   const renderer = L.canvas({ padding: 0.3 });
+  map.fitBounds(L.latLngBounds(cells.map((c) => [c.lat, c.lon])).pad(0.05));
   const hd = meta.grid.dlat / 2, hw = meta.grid.dlon / 2;
   const rects = cells.map((c, i) =>
     L.rectangle([[c.lat - hd, c.lon - hw], [c.lat + hd, c.lon + hw]], {
@@ -69,7 +70,7 @@
       let v;
       if (c.kind === "match") v = tc.value === null ? `<span class="small">no sourced value — excluded</span>` : `${tc.value} ${c.unit} ${link(tc.source_url)}`;
       else v = `toward extreme (${tc.direction})`;
-      return `<tr><td>${esc(c.label)}${tc.source_note ? `<div class="small">${esc(tc.source_note)}</div>` : ""}</td><td>${v}</td></tr>`;
+      return `<tr><td title="${esc(tc.source_note || "")}">${esc(c.label)}</td><td>${v}</td></tr>`;
     }).join("");
     const real = (t.real_values_for_display || []).map((r) =>
       `<tr><td>${esc(r.label)}</td><td>${esc(r.value)} ${link(r.source_url)}</td></tr>`).join("");
@@ -77,9 +78,10 @@
       <h3>${esc(t.name)}</h3>
       <div class="small">${t.center && t.center.lat != null ? `Center ≈ ${t.center.lat}°, ${t.center.lon}° ${link(t.center.source_url)}` : ""}</div>
       ${t.description ? `<p class="small">${esc(t.description)}</p>` : ""}
-      <table class="kv"><tr><th>Criterion</th><th>Target profile</th></tr>${rows}</table>
-      ${real ? `<p class="small" style="margin:10px 0 4px"><b>Real conditions there (for context)</b></p><table class="kv">${real}</table>` : ""}
-      <p class="small">${active.length} criteria active.</p>`;
+      <details><summary>Target profile (${active.length} criteria)</summary>
+      <table class="kv"><tr><th>Criterion</th><th>Target value</th></tr>${rows}</table>
+      <p class="small">${esc(t.criteria.slope_median_deg?.source_note || "")}</p></details>
+      ${real ? `<details><summary>Real conditions there (for context)</summary><table class="kv">${real}</table></details>` : ""}`;
   }
 
   // ---------- sliders ----------
@@ -180,7 +182,7 @@
       ${tests.length ? `<ul class="tight">${tests.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : `<p class="small">No criterion reaches similarity ≥ 0.70 in this cell.</p>`}
       <h3 style="margin-top:12px">What Earth can't simulate</h3>
       <ul class="tight">${(t.earth_cannot_simulate || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
-      <p class="small">Climate: precip ${fmt(c.PRECTOTCORR, 2)} mm/day · T mean ${fmt(c.T2M)} °C · T range ${fmt(S.value(c, "thermal_range"))} °C · solar ${fmt(c.ALLSKY_SFC_SW_DWN, 2)} kWh/m²/day (NASA POWER climatology).</p>`;
+      <p class="small">Climate: precip ${fmt(c.PRECTOTCORR, 2)} mm/day · T mean ${fmt(c.T2M)} °C · T range ${fmt(S.value(c, "thermal_range"))} °C · solar ${fmt(c.ALLSKY_SFC_SW_DWN, 0)} W/m² (annual mean) (NASA POWER climatology).</p>`;
     $("site-panel").hidden = false;
   }
   $("close-panel").addEventListener("click", () => {
@@ -188,10 +190,14 @@
     if (selRect) { map.removeLayer(selRect); selRect = null; }
   });
 
+  // deep link: #<target_key>/<lat>,<lon>
+  const [hk, hc] = decodeURIComponent(location.hash.slice(1)).split("/");
+  if (targets[hk]) state.target = hk;
   renderTargetButtons();
   renderTargetCard();
   renderSliders();
   update();
+  if (hc) { const [la, lo] = hc.split(",").map(Number); if (isFinite(la) && isFinite(lo)) selectCell(S.nearestCell(cells, la, lo), true); }
 })().catch((e) => {
   console.error(e);
   document.body.insertAdjacentHTML("afterbegin", `<div style="padding:12px;background:#f85149;color:#000">Failed to load data: ${e.message}</div>`);

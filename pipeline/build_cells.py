@@ -27,7 +27,7 @@ def main():
         "units": {
             "slope_median_deg": "deg", "slope_p90_deg": "deg", "relief_m": "m", "elev_mean_m": "m",
             "T2M": "°C", "T2M_MAX": "°C", "T2M_MIN": "°C", "T2M_RANGE": "°C",
-            "PRECTOTCORR": "mm/day", "ALLSKY_SFC_SW_DWN": "kWh/m²/day", "RH2M": "%",
+            "PRECTOTCORR": "mm/day", "ALLSKY_SFC_SW_DWN": "W/m²", "RH2M": "%",
         },
         "n_cells": len(cells),
     }
