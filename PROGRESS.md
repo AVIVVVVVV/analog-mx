@@ -1,6 +1,6 @@
 # PROGRESS
 
-**Current phase:** 6 (publish), blocked on GitHub credentials. Phases 0–5 and 7 are done.
+**Current phase:** MVP published. Live: https://avivvvvvv.github.io/analog-mx/ · Repo: https://github.com/AVIVVVVVV/analog-mx
 
 ## Done
 - Phase 0: repo, deps (`requirements.txt`), `.gitignore` (excludes `data/raw/`).
@@ -15,11 +15,9 @@
 - `.github/workflows/pages.yml` deploys `web/` to GitHub Pages on push to `main`.
 
 ## Pending
-- **Publish:** needs the GitHub CLI (`winget install GitHub.cli`, then `gh auth login`) or an empty repo created by Habib. Then:
-  `gh repo create analog-mx --public --source . --push` → enable Pages with "GitHub Actions" as source
-  (`gh api -X POST repos/{owner}/analog-mx/pages -f build_type=workflow`) → check the URL in a private window
-  → put the URL in the README and in the footer "Source code" link.
-- Extras (only if Habib asks): Solar System Treks WMTS target map, GLO-30 for the top 10, EMIT gypsum.
+- Extras (only if Habib asks), in order: Solar System Treks WMTS target map, GLO-30 for the top 10, EMIT gypsum.
+- Habib: check the Space Apps 2026 AI-use rules against the disclosure in docs/submission.md.
+- Deploys: push to `main` → GitHub Action `.github/workflows/pages.yml` publishes `web/`.
 
 ## Re-running
 Everything is cached. `python pipeline/build_cells.py && python pipeline/validate.py` rebuilds in about 10 s.

@@ -4,7 +4,7 @@
 
 Analog MX scores every 0.5° cell of northern Mexico against the terrain and climate profile of a target site — the **Mons Mouton Plateau** (lunar south pole, Artemis III candidate region) or **Gale Crater** (Curiosity's site on Mars) — and ranks the best places on Earth to test rovers, habitats and instruments there first. Built for the NASA Space Apps Challenge 2026 challenge *"Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars"*.
 
-🌐 **Live site:** _(GitHub Pages URL — see below)_
+🌐 **Live site:** https://avivvvvvv.github.io/analog-mx/ · Source: https://github.com/AVIVVVVVV/analog-mx
 
 ![Moon target](docs/img/moon.png)
 ![Mars target, Cuatro Ciénegas cell selected](docs/img/mars-cuatro-cienegas.png)
